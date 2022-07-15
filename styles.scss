@@ -1,0 +1,11 @@
+.translation {
+  height: 300px;
+  width: 800px;
+  border: 2px solid black;
+  &__header {
+    font-size: 60px;
+  }
+  &__input-text {
+    height: 300px;
+  }
+}
