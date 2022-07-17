@@ -1,4 +1,13 @@
-const morseCodeToEnglish = (morseCode, () => {
+console.log("This is a script");
+
+translateBtn = document.querySelector("#translateBtn");
+
+inputText = document.getElementById("inputText");
+
+outputText = document.getElementById("outputText");
+
+
+function morseCodeToEnglish(morseCode) {
   const translate = {
     ".-":"A",
     "-...":"B",
@@ -27,15 +36,15 @@ const morseCodeToEnglish = (morseCode, () => {
     "-.--":"Y",
     "--..":"Z",
     "-----": "0", //falsey if not in quotes
-    ".----": 1,
-    "..---": 2,
-    "...--": 3,
-    "....-": 4,
-    ".....": 5,
-    "-....": 6,
-    "--...": 7,
-    "---..": 8,
-    "----.": 9,
+    ".----": "1",
+    "..---": "2",
+    "...--": "3",
+    "....-": "4",
+    ".....": "5",
+    "-....": "6",
+    "--...": "7",
+    "---..": "8",
+    "----.": "9",
   };
   
   return morseCode
@@ -51,9 +60,9 @@ const morseCodeToEnglish = (morseCode, () => {
          .join(""))
     //join the array at the first split level (join words with a space)
     .join(" ");
-});
+};
 
-const englishToMorseCode = (english, () => {
+function englishToMorseCode(english) {
   const translate = {
     "A":".-",
     "B":"-...",
@@ -82,15 +91,15 @@ const englishToMorseCode = (english, () => {
     "Y":"-.--",
     "Z":"--..",
     "0":"-----", 
-    1:".----",
-    2:"..---",
-    3:"...--",
-    4:"....-",
-    5:".....",
-    6:"-....",
-    7:"--...",
-    8:"---..",
-    9:"----.",
+    "1":".----",
+    "2":"..---",
+    "3":"...--",
+    "4":"....-",
+    "5":".....",
+    "6":"-....",
+    "7":"--...",
+    "8":"---..",
+    "9":"----.",
   };
   
   return english
@@ -106,4 +115,8 @@ const englishToMorseCode = (english, () => {
          .join(" "))
     //join the array at the first split level (join words with a space)
     .join("");
+};
+
+translateBtn.addEventListener("click", () => {
+  englishToMorseCode(inputText);
 });
