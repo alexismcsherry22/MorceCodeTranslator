@@ -1,8 +1,16 @@
-.translation {
-  height: 300px;
-  width: 800px;
-  border: 2px solid black;
-}
 .translation__header {
   font-size: 60px;
+}
+.translation__input-text {
+  height: 150px;
+  width: 300px;
+  font-size: 25px;
+}
+.translation__output-text {
+  height: 150px;
+  width: 300px;
+  font-size: 25px;
+}
+.translation__button {
+  font-size: 25px;
 }
