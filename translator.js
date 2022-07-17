@@ -102,7 +102,7 @@ function englishToMorseCode(english) {
     "9":"----.",
   };
   
-  return english
+  return outputText.value = english
     //first split indicates where the space between words are
     .split(" ")
     //use map to "translate" from morse code to english
@@ -118,5 +118,8 @@ function englishToMorseCode(english) {
 };
 
 translateBtn.addEventListener("click", () => {
-  englishToMorseCode(inputText);
+  let english = inputText.value;
+  console.log(english);
+  englishToMorseCode(english);
+  console.log(outputText.value);
 });
