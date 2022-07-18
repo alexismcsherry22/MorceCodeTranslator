@@ -1,53 +1,15 @@
-console.log("This is a script");
+import{ translate, flipObj} from "./nonDOM.js";
 
-translateBtn = document.querySelector("#translateBtn");
+const translateBtn = document.querySelector("#translateBtn");
 
-inputText = document.getElementById("inputText");
+const inputText = document.getElementById("inputText");
 
-outputText = document.getElementById("outputText");
+const outputText = document.getElementById("outputText");
 
+const errorMessage = document.getElementById("errorMessage");
 
 const morseCodeToEnglish = (morseCode) => {
-  const translate = {
-    ".-":"A",
-    "-...":"B",
-    "-.-.":"C",
-    "-..":"D",
-    ".":"E",
-    "..-.":"F",
-    "--.":"G",
-    "....":"H",
-    "..":"I",
-    ".---":"J",
-    "-.-":"K",
-    ".-..":"L",
-    "--":"M",
-    "-.":"N",
-    "---":"O",
-    ".--.":"P",
-    "--.-":"Q",
-    ".-.":"R",
-    "...":"S",
-    "-":"T",
-    "..-":"U",
-    "...-":"V",
-    ".--":"W",
-    "-..-":"X",
-    "-.--":"Y",
-    "--..":"Z",
-    "-----": "0", //falsey if not in quotes
-    ".----": "1",
-    "..---": "2",
-    "...--": "3",
-    "....-": "4",
-    ".....": "5",
-    "-....": "6",
-    "--...": "7",
-    "---..": "8",
-    "----.": "9",
-  };
-  
-  return morseCode
+  return outputText.value = morseCode
     //first split indicates where the space between words are
     .split("   ")
     //use map to "translate" from morse code to english
@@ -63,45 +25,8 @@ const morseCodeToEnglish = (morseCode) => {
 };
 
 const englishToMorseCode = (english) => {
-  const translate = {
-    A:".-",
-    B:"-...",
-    C:"-.-.",
-    D:"-..",
-    E:".",
-    F:"..-.",
-    G:"--.",
-    H:"....",
-    I:"..",
-    J:".---",
-    K:"-.-",
-    L:".-..",
-    M:"--",
-    N:"-.",
-    O:"---",
-    P:".--.",
-    Q:"--.-",
-    R:".-.",
-    S:"...",
-    T:"-",
-    U:"..-",
-    V:"...-",
-    W:".--",
-    X:"-..-",
-    Y:"-.--",
-    Z:"--..",
-    "0":"-----", 
-    "1":".----",
-    "2":"..---",
-    "3":"...--",
-    "4":"....-",
-    "5":".....",
-    "6":"-....",
-    "7":"--...",
-    "8":"---..",
-    "9":"----.",
-  };
-  
+  let flip = flipObj(translate);
+  console.log(flip);
   return outputText.value = english
     //first split indicates where the space between words are
     .split(" ")
@@ -110,16 +35,40 @@ const englishToMorseCode = (english) => {
          //by further spliting up each individual code
          .split("")
          //use map again so we can translate at each index of the array
-         .map(b => translate[b])
+         .map(b => flip[b])
          //join the array at the second split level (create word)
          .join(" "))
     //join the array at the first split level (join words with a space)
     .join("");
 };
 
+
+//add error handling
+
 translateBtn.addEventListener("click", () => {
-  let english = inputText.value;
-  console.log(english);
-  englishToMorseCode(english);
+  let value = inputText.value;
+  
+  if (value === "")
+  {
+    errorMessage.innerText = "Please input text";
+    return;
+  } //else if(!value.match(/[^./ -][a-z]/gi)) {
+  //   errorMessage.innerText = "input is not morse code or english";
+  //   return;
+  // }
+
+  console.log(errorMessage.innerText);
+  
+  console.log(value);
+  //if the value does not have any of these symbols
+  if (value.match(/[^./ -]/)) { 
+    errorMessage.innerText = "";
+    englishToMorseCode(value);
+  } else 
+  {
+    errorMessage.innerText = "";
+    morseCodeToEnglish(value)
+  }
+  
   console.log(outputText.value);
 });

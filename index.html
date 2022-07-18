@@ -10,11 +10,14 @@
 <body>
   <section class="translation">
     <h2 class="translation__header">Translate</h2>
-    <textarea class="translation__input-text" id="inputText" placeholder="Type Here..."></textarea>
-    <textarea class="translation__output-text" id="outputText"  placeholder="Output Here..." ></textarea>
+    <div class="translation__boxes">
+      <textarea class="translation__input-text" id="inputText" placeholder="Type Here..."></textarea>
+      <textarea class="translation__output-text" id="outputText"  placeholder="Output Here..." ></textarea>
+    </div>
     <br>
     <button class="translation__button" id="translateBtn">Translate</button>
   </section>
+  <p id="errorMessage"></p>
 </body>
-<script src="./translator.js"></script>
+<script type="module" src="./translator.js"></script>
 </html>

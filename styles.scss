@@ -1,6 +1,16 @@
 .translation {
+  background-color: lightblue;
   &__header {
     font-size: 60px;
+    text-align: center;
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  &__boxes {
+    display: flex;
+    justify-content:space-around;
+    width: 800px;
+    padding-left: 150px;
   }
   &__input-text {
     height: 150px;
@@ -14,5 +24,22 @@
   }
   &__button {
     font-size: 25px;
+    margin-left: 200px;
+    margin-bottom: 10px;
   }
+  &__button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  &__button:active {
+    background-color: purple;
+  }
+}
+
+#errorMessage {
+  font-size: 30px;
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
 }

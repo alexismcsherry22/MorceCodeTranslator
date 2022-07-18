@@ -1,5 +1,17 @@
+.translation {
+  background-color: lightblue;
+}
 .translation__header {
   font-size: 60px;
+  text-align: center;
+  color: red;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.translation__boxes {
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  padding-left: 150px;
 }
 .translation__input-text {
   height: 150px;
@@ -13,4 +25,21 @@
 }
 .translation__button {
   font-size: 25px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+}
+.translation__button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.translation__button:active {
+  background-color: purple;
+}
+
+#errorMessage {
+  font-size: 30px;
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
 }
