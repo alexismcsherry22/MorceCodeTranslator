@@ -7,7 +7,7 @@ inputText = document.getElementById("inputText");
 outputText = document.getElementById("outputText");
 
 
-function morseCodeToEnglish(morseCode) {
+const morseCodeToEnglish = (morseCode) => {
   const translate = {
     ".-":"A",
     "-...":"B",
@@ -62,34 +62,34 @@ function morseCodeToEnglish(morseCode) {
     .join(" ");
 };
 
-function englishToMorseCode(english) {
+const englishToMorseCode = (english) => {
   const translate = {
-    "A":".-",
-    "B":"-...",
-    "C":"-.-.",
-    "D":"-..",
-    "E":".",
-    "F":"..-.",
-    "G":"--.",
-    "H":"....",
-    "I":"..",
-    "J":".---",
-    "K":"-.-",
-    "L":".-..",
-    "M":"--",
-    "N":"-.",
-    "O":"---",
-    "P":".--.",
-    "Q":"--.-",
-    "R":".-.",
-    "S":"...",
-    "T":"-",
-    "U":"..-",
-    "V":"...-",
-    "W":".--",
-    "X":"-..-",
-    "Y":"-.--",
-    "Z":"--..",
+    A:".-",
+    B:"-...",
+    C:"-.-.",
+    D:"-..",
+    E:".",
+    F:"..-.",
+    G:"--.",
+    H:"....",
+    I:"..",
+    J:".---",
+    K:"-.-",
+    L:".-..",
+    M:"--",
+    N:"-.",
+    O:"---",
+    P:".--.",
+    Q:"--.-",
+    R:".-.",
+    S:"...",
+    T:"-",
+    U:"..-",
+    V:"...-",
+    W:".--",
+    X:"-..-",
+    Y:"-.--",
+    Z:"--..",
     "0":"-----", 
     "1":".----",
     "2":"..---",
@@ -108,7 +108,7 @@ function englishToMorseCode(english) {
     //use map to "translate" from morse code to english
     .map(a => a
          //by further spliting up each individual code
-         .split("   ")
+         .split("")
          //use map again so we can translate at each index of the array
          .map(b => translate[b])
          //join the array at the second split level (create word)
