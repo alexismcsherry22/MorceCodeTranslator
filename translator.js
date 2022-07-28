@@ -46,7 +46,7 @@ const englishToMorseCode = (english) => {
 //add error handling
 
 translateBtn.addEventListener("click", () => {
-  let value = inputText.value;
+  let value = inputText.value.toUpperCase();
   
   if (value === "")
   {

@@ -31,12 +31,11 @@ body {
 }
 .translation__box {
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 .translation__box--button {
   font-size: 25px;
-  margin-left: 200px;
+  width: 200px;
   margin-bottom: 10px;
 }
 .translation__box--button:hover {
