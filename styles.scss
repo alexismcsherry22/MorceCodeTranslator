@@ -1,45 +1,57 @@
+body {
+    background-color: aqua;
+}
+
 .translation {
-  background-color: lightblue;
-  &__header {
-    font-size: 60px;
-    text-align: center;
-    color: red;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  &__boxes {
-    display: flex;
-    justify-content:space-around;
-    width: 800px;
-    padding-left: 150px;
-  }
-  &__input-text {
-    height: 150px;
-    width: 300px;
-    font-size: 25px;
-  }
-  &__output-text {
-    height: 150px;
-    width: 300px;
-    font-size: 25px;
-  }
-  &__button {
-    font-size: 25px;
-    margin-left: 200px;
-    margin-bottom: 10px;
-  }
-  &__button:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-  }
-  &__button:active {
-    background-color: purple;
-  }
+    background-color: lightblue;
+    border: 5px solid white;
+    &__header {
+        font-size: 60px;
+        text-align: center;
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    &__boxes {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    &__input-text {
+        height: 150px;
+        width: 300px;
+        font-size: 25px;
+        margin: 10px;
+    }
+    &__output-text {
+        height: 150px;
+        width: 300px;
+        font-size: 25px;
+        margin: 10px;
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &--button {
+            font-size: 25px;
+            margin-left: 200px;
+            margin-bottom: 10px;
+        }
+        &--button:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        &--button:active {
+            background-color: purple;
+        }
+    }
 }
 
 #errorMessage {
-  font-size: 30px;
-  color: red;
-  text-decoration: underline;
-  font-weight: bold;
+    font-size: 30px;
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
 }

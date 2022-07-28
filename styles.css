@@ -1,5 +1,10 @@
+body {
+  background-color: aqua;
+}
+
 .translation {
   background-color: lightblue;
+  border: 5px solid white;
 }
 .translation__header {
   font-size: 60px;
@@ -9,31 +14,37 @@
 }
 .translation__boxes {
   display: flex;
-  justify-content: space-around;
-  width: 800px;
-  padding-left: 150px;
+  justify-content: center;
+  flex-direction: row;
 }
 .translation__input-text {
   height: 150px;
   width: 300px;
   font-size: 25px;
+  margin: 10px;
 }
 .translation__output-text {
   height: 150px;
   width: 300px;
   font-size: 25px;
+  margin: 10px;
 }
-.translation__button {
+.translation__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.translation__box--button {
   font-size: 25px;
   margin-left: 200px;
   margin-bottom: 10px;
 }
-.translation__button:hover {
+.translation__box--button:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
-.translation__button:active {
+.translation__box--button:active {
   background-color: purple;
 }
 
